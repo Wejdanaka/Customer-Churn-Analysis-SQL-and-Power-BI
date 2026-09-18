@@ -1,8 +1,10 @@
-**Churn Analysis: RavenStack startup (SQL and Power BI)**
+## Churn Analysis: RavenStack startup (SQL and Power BI)
 
 An end-to-end data analytics project to build churn analysis for RavenStack using SQL queries for data cleaning and EDA and an interactive Power BI dashboard for analytics and visualization. This analysis answers a main business question: What causes customer churn? Where do the operational failures occur: from lead acquisition to product experience?
 
-**Project overview:** 
+---
+
+## Project overview 
 
 **Case study:** RavenStack is a stealth-mode SaaS startup that delivers an AI collaboration tool for teams and the tool provides basic, pro, and enterprise subscription plans. 
 
@@ -14,16 +16,18 @@ An end-to-end data analytics project to build churn analysis for RavenStack usin
 
 •	Power BI Layer: Transforms SQL outputs into an interactive 3-page executive dashboard to highlight revenue risk and operational failure points for leadership.
 
+---
 
-**Data source:** The dataset used for this project is [RavenStack: Synthetic SaaS Dataset](https://www.kaggle.com/datasets/rivalytics/saas-subscription-and-churn-analytics-dataset) published on Kaggle
+## Data source
+The dataset used for this project is [RavenStack: Synthetic SaaS Dataset](https://www.kaggle.com/datasets/rivalytics/saas-subscription-and-churn-analytics-dataset) published on Kaggle
 
 •	Author: River @ Rivalytics.
 
 •	Tables and scope: accounts (500); subscriptions (5,000); feature usage (25,000); support tickets (2,000); churn events (600)
 
+---
 
-
-**SQL Analysis**
+## SQL Analysis
 
 **Tool:** SQL Server Management Studio 
 
@@ -40,10 +44,9 @@ I extracted, linked, cleaned and explored the raw data in SQL Server to validate
 
 •	**Exploratory Data Analysis (EDA):** I used SELECT, COUNT, SUM, AVG, GROUP BY, and ORDER BY statements to measure baseline conversion rate and total refund amounts by churn reason, and evaluate ticket volumes, resolution times, and customer satisfaction scores across ticket priority levels. 
  
+---
 
-
-
-**Power BI dashboard**
+## Power BI dashboard**
 
 **Tool:** Power BI Desktop
 
@@ -72,9 +75,9 @@ Investigate technical support delays that lead customers to cancel.
   ![Product and Support](assets/Product_and_Support.jpg)
 
 
+---
 
-
-**Key business insights and recommendations:**
+## Key business insights and recommendations
 
 **•	Good conversion, but there is significant churn in the middle of the lifecycle:** While RavenStack’s customer conversion performs well with an 80.60% trial conversion rate, RavenStack is experiencing a 22.00% churn rate and a 24.72% ARR loss rate. Customers are signing up, but they are leaving during active paid usage.
 
@@ -92,9 +95,9 @@ Investigate technical support delays that lead customers to cancel.
 
 **o	Action:** implement strict rules to resolve urgent and high-priority tickets first.
 
+---
 
-
-**Technical challenges:**
+## Technical challenges
 
 **•	Adding auto_feature_id:** Setting usage_id as the primary key failed because SQL Server flagged 21 duplicate IDs. However, these weren't duplicate rows; they were separate user actions from different subscriptions that accidentally shared the same ID  (due to a data-generation bug).
 
@@ -104,8 +107,21 @@ o	Deleting these rows would have removed usage times and error records needed fo
 
 o	In Power BI's Model View, I set the cross-filter direction between churn_events[account_id] and subscriptions[account_id] to Both and activated the relationship. This allowed cancellation reasons to properly filter subscription ARR and reveal the true revenue loss per reason. AI was used to double-check how filters flow between tables against target DAX patterns
 
+---
+## Tools and Techniques 
+
+**SQL:** SQL Server Management, SELECT, ALTER, UPDATE, ADD, WHERE, GROUP BY, ORDER BY, LEFT JOIN, COUNT, SUM, AVG, CASE WHEN, CTE (Common Table Expression).
+
+**Power BI:** Power BI Desktop, Power Query, data modeling and table relationships, DAX measures (CALCULATE, DIVIDE, SUM, AVERAGE), KPI cards, stacked area chart, clustered bar chart, stacked column chart, clustered column chart, matrix and Line and clustered column chart. 
+
+---
 
 **License:** Permissive MIT-like License (Synthetic dataset, educational/portfolio use with attribution)
+
+---
+**Author** 
+**Wejdan Akaleek**
+
 
 
 
