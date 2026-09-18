@@ -14,6 +14,7 @@ An end-to-end data analytics project to build churn analysis for RavenStack usin
 
 •	Power BI Layer: Transforms SQL outputs into an interactive 3-page executive dashboard to highlight revenue risk and operational failure points for leadership.
 
+
 **Data source:** The dataset used for this project is [RavenStack: Synthetic SaaS Dataset](https://www.kaggle.com/datasets/rivalytics/saas-subscription-and-churn-analytics-dataset) published on Kaggle
 
 •	Author: River @ Rivalytics.
