@@ -3,16 +3,21 @@
 An end-to-end data analytics project to build churn analysis for RavenStack using SQL queries for data cleaning and EDA and an interactive Power BI dashboard for analytics and visualization. This analysis answers a main business question: What causes customer churn? Where do the operational failures occur: from lead acquisition to product experience?
 
 **Project overview:** 
+
 **Case study:** RavenStack is a stealth-mode SaaS startup that delivers an AI collaboration tool for teams and the tool provides basic, pro, and enterprise subscription plans. 
 
 **Business context/ problem:** RavenStack piloted its platform and collected detailed data on every sign-up, feature interaction, support ticket, and cancellation. Before scaling and public launch, leadership needs to evaluate these pilot results to understand customer churn patterns and where failures occur.
 
 **Analytical Approach:** This project combines a structure of two layers:
+
 •	SQL Layer: Cleans raw customer tables, validates relationships, and executes exploratory data analysis (EDA) to calculate churn baseline.
+
 •	Power BI Layer: Transforms SQL outputs into an interactive 3-page executive dashboard to highlight revenue risk and operational failure points for leadership.
 
 **Data source:** The dataset used for this project is [RavenStack: Synthetic SaaS Dataset](https://www.kaggle.com/datasets/rivalytics/saas-subscription-and-churn-analytics-dataset) published on Kaggle
+
 •	Author: River @ Rivalytics.
+
 •	Tables and scope: accounts (500); subscriptions (5,000); feature usage (25,000); support tickets (2,000); churn events (600)
 
 
