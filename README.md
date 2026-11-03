@@ -55,14 +55,14 @@ I extracted, linked, cleaned and explored the raw data in SQL Server to validate
 **Data model:** Star-schema style relationship between 5 tables: accounts, subscriptions, feature usage, support tickets, churn events, with 10 custom DAX measures.
 
 **Page 1: Executive Overview: acquisition leak** 
-Track revenue leakage across acquisition channels (referral sources) by examining core performance indicators using custom DAX measures: Conversion Rate (80.60%), Total ARR ($86.05M), ARR Loss Rate (24.72%), ARPU ($22.55K), and Churn Rate (22.00%)—to define revenue leakage across acquisition channels. 
+Tracks key metrics: Trial Conversion (80.60%), Active ARR ($86.05M), ARR Loss Rate (24.72%), ARPU ($22.55K), and Churn Rate (22.00%). 
 •	Main question: Where in the sales funnel is the startup losing revenue, and which customer acquisition channels bring in the highest-risk accounts?
 
  ![Executive Overview](assets/executive_overview.jpg)
 
 **Page 2: Revenue impact & Churn drivers: financial bleed**
 
-Monitor the financial impact of churning across plans (basic, pro and enterprise), countries, and cancellation feedback.
+Sorts the financial impact by subscription plan, location, and why customers left. Since some customers listed multiple reasons for leaving, the data was cleaned up so each customer was only counted once. Accounts that didn't give a reason are labeled as 'Unspecified'.
 •	Main question: How much money ($ ARR) is this startup losing, which customer plan tiers and geographic markets are bleeding the most, and what reasons are customers giving when they cancel?
  
  ![Revenue Impact Churn Drivers](assets/Revenue_Impact_Churn_Drivers.jpg)
@@ -85,15 +85,15 @@ Investigate technical support delays that lead customers to cancel.
 
 **•	Event and ad channels bring in the highest-risk customers:** event referrals produce the highest churn rate (around 30%), followed by ‘other’ and ads channels. In contrast, organic and partner sign-ups exhibit lower churn rates.
 
-**o	Action:** shift acquisition strategy from high-churn event and ad campaigns toward organic and partner channels.  
+**o	Action:** Shift acquisition strategy from high-churn event and ad campaigns toward organic and partner channels.  
 
-**•	Technical errors are driving support overloads:** a total of 14K errors were logged across features, with Feature_4, Feature_26, Feature_9, and Feature_2 generating over 1,600 errors combined.
+**•	Uniform System Error Distribution:** Errors are spread evenly across features (361–418 each), with the top 4 accounting for only ~12% of the 14K total errors.
 
-**o	Action:** Adress top error in Feature_4, Feature_26, Feature_9, and Feature_2 to remove over 1,600 system errors.  
+**o	Action:** Direct engineering efforts toward core platform stability rather than patching single features.  
 
-**•	Response times for support are delayed across all plan tiers:** resolution times average 35.86 hours regardless of whether a ticket is flagged as urgent, high, or low priority. This leaves high-value customers waiting when major errors occur, which leads to a drop in overall satisfaction to 3.98 CSAT.
+**•	Support Response Times vs. Customer Satisfaction:** Customer satisfaction remains high (~3.98 / 5.00), but resolution times average 35.86 hours across all priorities.
 
-**o	Action:** implement strict rules to resolve urgent and high-priority tickets first.
+**o	Action:** Implement strict rules to resolve urgent and high-priority tickets first.
 
 ---
 
@@ -103,9 +103,6 @@ Investigate technical support delays that lead customers to cancel.
 
 o	Deleting these rows would have removed usage times and error records needed for churn analysis. Instead, I added a brand-new auto-incrementing column (auto_feature_id) to serve as a primary key without losing any underlying data. I used AI as a coding assistant to research standard SQL techniques for handling duplicate IDs with unique rows
 
-**•	Fix relationship issues in Power BI:** The churn reasons chart on Page 2 showed identical, flat numbers across every bar because Power BI wasn't passing filters between tables. Cancellation reasons are in the churn_events table, while revenue data is in the subscriptions table. Because the relationship was one-way (and inactive), selecting a cancellation reason couldn't filter the revenue metrics.
-
-o	In Power BI's Model View, I set the cross-filter direction between churn_events[account_id] and subscriptions[account_id] to Both and activated the relationship. This allowed cancellation reasons to properly filter subscription ARR and reveal the true revenue loss per reason. AI was used to double-check how filters flow between tables against target DAX patterns
 
 ---
 ## Tools and Techniques 
