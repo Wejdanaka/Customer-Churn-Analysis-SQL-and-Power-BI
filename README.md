@@ -58,21 +58,21 @@ I extracted, linked, cleaned and explored the raw data in SQL Server to validate
 Tracks key metrics: Trial Conversion (80.60%), Active ARR ($86.05M), ARR Loss Rate (24.72%), ARPU ($22.55K), and Churn Rate (22.00%). 
 •	Main question: Where in the sales funnel is the startup losing revenue, and which customer acquisition channels bring in the highest-risk accounts?
 
- ![Executive Overview](images/executive_overview%201.jpg)
+ ![Executive Overview](assets/executive_overview.jpg)
 
 **Page 2: Revenue impact & Churn drivers: financial bleed**
 
 Sorts the financial impact by subscription plan, location, and why customers left. Since some customers listed multiple reasons for leaving, the data was cleaned up so each customer was only counted once. Accounts that didn't give a reason are labeled as 'Unspecified'.
 •	Main question: How much money ($ ARR) is this startup losing, which customer plan tiers and geographic markets are bleeding the most, and what reasons are customers giving when they cancel?
  
- ![Revenue Impact & Churn Drivers](images/Revenue_Impact_Churn_Drivers%201.jpg)
+ ![Revenue Impact & Churn Drivers](assets/revenue_impact.jpg)
  
 **Page 3: Product & support friction: operational root cause**
 Investigate technical support delays that lead customers to cancel.
 
 •	Main question: which specific features are breaking, how are those product defects impacting customer support response times and CSAT, and what operational fixes will stop the churn?
  
- ![Product & Support Friction](images/Product_and_Support1.jpg)
+![Product & Support Friction](assets/product_support.jpg)
 
 ---
 
