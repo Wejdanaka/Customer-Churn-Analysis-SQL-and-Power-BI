@@ -78,7 +78,7 @@ Investigate technical support delays that lead customers to cancel.
 
 ## Key business insights and recommendations
 
-![Business Insights & Recommendations Summary](assets/business_insights_slide.png)
+![Business Insights & Recommendations Summary](Business_insights.jpg)
 
 
 ---
