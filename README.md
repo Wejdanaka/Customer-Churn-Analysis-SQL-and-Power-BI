@@ -78,21 +78,8 @@ Investigate technical support delays that lead customers to cancel.
 
 ## Key business insights and recommendations
 
-**•	Good conversion, but there is significant churn in the middle of the lifecycle:** While RavenStack’s customer conversion performs well with an 80.60% trial conversion rate, RavenStack is experiencing a 22.00% churn rate and a 24.72% ARR loss rate. Customers are signing up, but they are leaving during active paid usage.
+![Business Insights & Recommendations Summary](assets/business_insights_slide.png)
 
-**o	Action:** Add early onboarding checks to catch struggling trial users before they cancel. 
-
-**•	Event and ad channels bring in the highest-risk customers:** event referrals produce the highest churn rate (around 30%), followed by ‘other’ and ads channels. In contrast, organic and partner sign-ups exhibit lower churn rates.
-
-**o	Action:** Shift acquisition strategy from high-churn event and ad campaigns toward organic and partner channels.  
-
-**•	Uniform System Error Distribution:** Errors are spread evenly across features (361–418 each), with the top 4 accounting for only ~12% of the 14K total errors.
-
-**o	Action:** Direct engineering efforts toward core platform stability rather than patching single features.  
-
-**•	Support Response Times vs. Customer Satisfaction:** Customer satisfaction remains high (~3.98 / 5.00), but resolution times average 35.86 hours across all priorities.
-
-**o	Action:** Implement strict rules to resolve urgent and high-priority tickets first.
 
 ---
 
